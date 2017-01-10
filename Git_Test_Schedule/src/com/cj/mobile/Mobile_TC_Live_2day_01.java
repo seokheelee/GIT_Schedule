@@ -219,6 +219,8 @@ public class Mobile_TC_Live_2day_01 {
    * Assertion : 구매하기 선택하여 주문서 작성으로 이동
    * History : 2016-06-13 : 옵션 선택이 2개 이상인 경우, 종료 처리
    * History : 2016-07-28 : 미리주문 -> 바로구매 관련 수정
+   * History : 2016-12-28 : 로그인 path 수정
+   * 
   **/
     
   /* 
@@ -277,7 +279,7 @@ public class Mobile_TC_Live_2day_01 {
 	    	element.click();
 	    */	    	                        
 	    }
-	  
+	    Thread.sleep(3000);
 	    //팝업창이 존재하면...  팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 	    isExist = existElement(driver,By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"),"팝업창");
 	  	if(isExist) {
@@ -312,7 +314,7 @@ public class Mobile_TC_Live_2day_01 {
 	    element = driver.findElement(By.xpath(".//*[@id='pwd']"));
 	    element.sendKeys(passwd);
 	    
-	    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
+	    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[5]"));
 	    element.click();
 	    	
 	  	Thread.sleep(3000);
