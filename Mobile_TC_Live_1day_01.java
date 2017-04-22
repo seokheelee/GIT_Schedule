@@ -498,12 +498,22 @@ public class Mobile_TC_Live_1day_01 {
 					return;
 			    }
 			    
-			    ////
-			  	//// 6. 결제하기 버튼 기다림.
-			    wait = new WebDriverWait(driver, waitTime);
-			    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ordFrm']/div[7]/button")));
-			    System.out.println("결제하기 버튼 기다림");
-			    }        
+			  	// 6. 결제하기 버튼 기다림.
+				if (driver.getTitle().equals("주문서 - CJmall")) {
+					System.out.println("타이틀 '주문서 - CJmall' 확인");
+					assertTrue(true);
+					} 
+				else {
+					if (driver.getTitle().equals("주문서 작성")) {
+			    	System.out.println("타이틀 '주문서 작성' 확인");
+					assertTrue(true);
+					}
+					else {
+					System.out.println("결제하기 버튼 없음");
+					assertTrue(false);
+					}
+					}
+	        }
 	        
 	        else{
 	        	System.out.println("복수 옵션 상품으로 종료합니다");
@@ -578,7 +588,7 @@ public class Mobile_TC_Live_1day_01 {
 
 			    	if(element.getText().indexOf("매진") >=0) {
 
-			    		System.out.println("매진 상풉입니다.. 여기서 종료합니다.["+element.getText()+"]");
+			    		System.out.println("매진 상품입니다.. 여기서 종료합니다.["+element.getText()+"]");
 			    		assertTrue(true);
 			    		Thread.sleep(3000);
 			    		return;
@@ -627,12 +637,23 @@ public class Mobile_TC_Live_1day_01 {
 					return;
 			    }
 			    
-			    ////
-			  	//// 6. 결제하기 버튼 기다림.
-			    wait = new WebDriverWait(driver, waitTime);
-			    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ordFrm']/div[7]/button")));
-			    System.out.println("결제하기 버튼 기다림");
-			    }
+			  	// 6. 결제하기 버튼 기다림.
+				if (driver.getTitle().equals("주문서 - CJmall")) {
+					System.out.println("타이틀 '주문서 - CJmall' 확인");
+					assertTrue(true);
+					} 
+				else {
+					if (driver.getTitle().equals("주문서 작성")) {
+			    	System.out.println("타이틀 '주문서 작성' 확인");
+					assertTrue(true);
+					}
+					else {
+					System.out.println("결제하기 버튼 없음");
+					assertTrue(false);
+					}
+					}
+	        }
+	        
 	        else{
 	        	System.out.println("복수 옵션 상품으로 종료합니다");
 				Thread.sleep(3000);
